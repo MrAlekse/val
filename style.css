@@ -1,10 +1,15 @@
-  * {
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: none;
-      }
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* only disable touch gestures where you drag */
+.lever-wrapper, .lever {
+  touch-action: none;
+}
+
 
       body {
         margin: 0;
@@ -85,6 +90,14 @@
     transform-origin: top center;
     cursor: grab;
     transform: translateX(-50%); /* keep centered */
+  }
+  
+  .letter-link {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    z-index: 6;
   }
 
     .inner-image {

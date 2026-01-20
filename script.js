@@ -13,6 +13,17 @@ let liftProgress = 0;
 const slideCount = slides.children.length;
 const slideWidth = 120;
 
+const image = document.getElementById('innerImage');
+const statusText = document.getElementById('status');
+
+let cachedImageHeight = 0;
+
+function cacheSizes() {
+  cachedImageHeight = image.getBoundingClientRect().height || image.offsetHeight;
+}
+window.addEventListener("load", cacheSizes);
+window.addEventListener("resize", cacheSizes);
+
 let currentIndex = 1;                 // start at actual first image (because of duplicate)
 let carouselOffset = -slideWidth;     // show first image
 
