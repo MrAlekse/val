@@ -1,0 +1,131 @@
+* {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none; /* critical for mobile dragging */
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(img3.jpg);
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    .music-box {
+      margin-top: 100px;
+      width: 280px;
+      height: 220px;
+      background: linear-gradient(#f0677c, #f5afba);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+      position: relative;
+      padding-top: 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+
+    .lid {
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  width: 300px;
+  height: 50px;
+  background: #b71c1c;
+  border-radius: 10px;
+  transition: transform 0.6s ease;
+}
+
+.lid.open {
+  transform: translateY(-35px);
+}
+
+  
+
+    /* Lever */
+    .lever-base {
+      position: absolute;
+      left: 50%;
+      top: 120px;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background: #333;
+      border-radius: 50%;
+      z-index: 3;
+    }
+
+    .lever-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 120px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+    }
+
+    .lever {
+      position: absolute;
+      left: -3px;
+      top: 0;
+      width: 6px;
+      height: 60px;
+      background: #d4af37;
+      border-radius: 3px;
+      transform-origin: top center;
+      cursor: grab;
+    }
+
+    .status {
+      margin-top: 70px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+  .inner-image {
+    position: absolute;
+    top: 40px; /* starts under the lid */
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    width: 120px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .inner-image.show {
+    opacity: 1;
+  }
+
+
+ /* VERTICAL RIBBON */
+  .ribbon-vertical {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width: 30px;
+    height: 210px;
+    background: #ff0000;
+    transform: translateX(-50%);
+  }
+
+  /* HORIZONTAL RIBBON */
+  .ribbon-horizontal {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 280px;
+    height: 30px;
+    background: #ff0000;
+    transform: translateY(-50%);
+  }
+
