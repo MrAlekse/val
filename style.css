@@ -1,54 +1,27 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  user-select: none;
-  -webkit-user-select: none;
-}
+  * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: none;
+      }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;              /* STOP PAGE SCROLL */
-  overscroll-behavior: none;     /* STOP BOUNCE SCROLL */
-  touch-action: none;            /* STOP SWIPE SCROLL */
-}
-body { min-height: 100vh; }
-.music-box { margin-top: 50px; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(images/img3.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
 
 
-/* only disable touch gestures where you drag */
-.lever-wrapper, .lever {
-  touch-action: none;
-}
-
-.carousel,
-.slides,
-.slide {
-  pointer-events: none;
-}
-
-/* allow tapping/clicking these */
-#windButton,
-.letter-link,
-.inner-image {
-  touch-action: manipulation;
-}
-
-     body {
-  margin: 0;
-  height: 100vh;          /* not min-height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(images/img3.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+      }
 
       .music-box {
+        margin-top: 50px;
         width: 280px;
         height: 220px;
         background: linear-gradient(#f0677c, #f5afba);
@@ -58,8 +31,6 @@ body { min-height: 100vh; }
         padding-top: 40px;
         text-align: center;
         color: #fff;
-        overflow: hidden;
-        touch-action: none;
       }
 
 
@@ -100,7 +71,7 @@ body { min-height: 100vh; }
     transform: translateX(-50%);
     width: 80px;    /* make it clickable */
     height: 60px;   /* make it clickable */
-    z-index: 20;
+    z-index: 4;
   }
 
   .lever {
@@ -114,15 +85,6 @@ body { min-height: 100vh; }
     transform-origin: top center;
     cursor: grab;
     transform: translateX(-50%); /* keep centered */
-    z-index: 21;
-  }
-  
-  .letter-link {
-    position: absolute;
-    left: 50%;
-    top: 40px;
-    transform: translateX(-50%);
-    z-index: 6;
   }
 
     .inner-image {
@@ -145,7 +107,6 @@ body { min-height: 100vh; }
 
     .inner-image.show {
       opacity: 1;
-      pointer-events: auto;
     }
 
     .inner-image {
@@ -178,7 +139,6 @@ body { min-height: 100vh; }
       height: 30px;
       background: #ff0000;
       transform: translateY(-50%);
-      z-index: 2;
     }
 
 #windButton {
@@ -219,8 +179,8 @@ body { min-height: 100vh; }
   top: -240px;
   left: 50%;
   transform: translateX(-50%);
-  width: 160px;
-  height: 140px;
+  width: 500px;
+  height: 500px;
   overflow: hidden;
   border-radius: 10px;
   z-index: 1;
@@ -327,6 +287,13 @@ body { min-height: 100vh; }
   transform: rotate(-20deg);
 }
 
+a:has(.inner-image) {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  z-index: 6;
+}
 .status {
   animation: pulse 1.8s infinite;
 }
@@ -336,11 +303,4 @@ body { min-height: 100vh; }
   50% { opacity: 1; }
 }
 
-.music-box { touch-action: none; }
-
-#windButton,
-.letter-link,
-.inner-image { touch-action: manipulation; }
-
-body { height: 100vh; }          /* replace min-height */
-.music-box { margin-top: 0; }    /* remove margin-top */
+fix this now when i drag on mobile its crashing
