@@ -72,13 +72,19 @@ function end() {
 function updateImage() {
   const image = document.getElementById('innerImage');
   const imageHeight = image.offsetHeight;
-  const rise = imageHeight * liftProgress;
+  const riseMultiplier = 1.4;
+  const rise = imageHeight * liftProgress * riseMultiplier;
   image.style.transform = `translateX(-50%) translateY(${-rise}px)`;
 
   if (liftProgress > 0) {
     image.classList.add('show');
   } else {
     image.classList.remove('show');
+  }
+   if (liftProgress >= 0.95) {
+    image.style.pointerEvents = "auto";
+  } else {
+    image.style.pointerEvents = "none";
   }
 }
 

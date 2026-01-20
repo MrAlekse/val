@@ -1,55 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Valentine’s Day</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/icon.png" type="image/png" />
-</head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Valentine’s Day</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/icon.png" type="image/png" />
+  </head>
 
-<body>
-  <div class="music-box" id="box">
+  <body>
+    <div class="music-box" id="box">
 
-    <div class="lid" id="lid"></div>
-    <div class="ribbon-vertical"></div>
-    <div class="ribbon-horizontal"></div>
-
-    <!-- Carousel Container -->
-    <div class="carousel">
-      <div class="slides" id="slides">
-        <img src="images/icon.png" class="slide" alt="Love Letter">
-        <img src="images/icon.png" class="slide" alt="Valentine 2">
-        <img src="images/icon.png" class="slide" alt="Valentine 3">
-        <img src="images/icon.png" class="slide" alt="Love Letter">
-        <img src="images/icon.png" class="slide" alt="Valentine 2">
-        <img src="images/icon.png" class="slide" alt="Valentine 3">
+      <div class="ribbon-vertical"></div>
+      <div class="ribbon-horizontal"></div>
+      <div class="lid" id="lid">
+        <div class="ribbon-bow">
+        <span class="bow-left"></span>
+        <span class="bow-right"></span>
+        <span class="bow-left1"></span>
+        <span class="bow-right1"></span>
+        <span class="bow-knot"></span>
       </div>
+      </div>
+
+
+      <!-- Carousel Container -->
+      <div class="carousel">
+        <div class="slides" id="slides">
+          <img src="images/icon.png" class="slide" alt="Love Letter">
+          <img src="images/icon.png" class="slide" alt="Valentine 2">
+          <img src="images/icon.png" class="slide" alt="Valentine 3">
+          <img src="images/icon.png" class="slide" alt="Love Letter">
+          <img src="images/icon.png" class="slide" alt="Valentine 2">
+          <img src="images/icon.png" class="slide" alt="Valentine 3">
+        </div>
+      </div>
+
+      <a href="letter.html" target="_blank" rel="noopener noreferrer">
+        <img
+        id="innerImage"
+        class="inner-image"
+        src="images/love-letter.png"
+        alt="Myloveforyou"
+      />
+      </a>
+
+      <div class="lever-base"></div>
+      <div class="lever-wrapper" id="leverWrapper">
+        <div class="lever" id="lever"></div>
+      </div>
+
+      <audio id="music" loop preload="auto" playsinline>
+        <source src="music.mp3" type="audio/mpeg">
+      </audio>
+
+      <button id="windButton">
+        <h1 class="gradient-text">Wind-Up Music Box</h1>
+      </button>
     </div>
 
-    <img
-      id="innerImage"
-      class="inner-image"
-      src="images/love-letter.png"
-      alt="Myloveforyou"
-    />
-
-    <div class="lever-base"></div>
-    <div class="lever-wrapper" id="leverWrapper">
-      <div class="lever" id="lever"></div>
-    </div>
-
-    <div class="status" id="status"></div>
-
-    <audio id="music" loop preload="auto">
-      <source src="music.mp3" type="audio/mpeg">
-    </audio>
-
-    <button id="windButton">
-      <h1 class="gradient-text">Wind-Up Music Box</h1>
-    </button>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <script src="script.js"></script>
+  </body>
+  </html>

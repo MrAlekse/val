@@ -3,7 +3,6 @@
         font-family: Arial, Helvetica, sans-serif;
         user-select: none;
         -webkit-user-select: none;
-        touch-action: none; /* critical for mobile dragging */
       }
 
       body {
@@ -34,13 +33,13 @@
       }
 
 
-      .lid {
+  .lid {
     position: absolute;
     top: -40px;
     left: -10px;
     width: 300px;
     height: 50px;
-    background: #b71c1c;
+    background: linear-gradient(#ff193c, #8e1515);
     border-radius: 10px;
     transition: transform 0.6s ease;
   }
@@ -87,12 +86,6 @@
     transform: translateX(-50%); /* keep centered */
   }
 
-      .status {
-        margin-top: 70px;
-        font-size: 14px;
-        opacity: 0.9;
-      }
-
     .inner-image {
       position: absolute;
       top: 40px; /* starts under the lid */
@@ -100,23 +93,38 @@
       transform: translateX(-50%) translateY(0);
       width: 120px;
       opacity: 0;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.2s ease, transform 0.8s ease;
       z-index: 2;
       pointer-events: none;
+      cursor: pointer;
     }
+
+    .inner-image,
+.inner-image * {
+  touch-action: manipulation;
+}
 
     .inner-image.show {
       opacity: 1;
     }
+
+    .inner-image {
+  cursor: default;
+}
+
+.inner-image[style*="pointer-events: auto"] {
+  cursor: pointer;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
 
 
   /* VERTICAL RIBBON */
     .ribbon-vertical {
       position: absolute;
       left: 50%;
-      top: 10px;
+      top: 0px;
       width: 30px;
-      height: 210px;
+      height: 220px;
       background: #ff0000;
       transform: translateX(-50%);
     }
@@ -133,7 +141,7 @@
     }
 
 #windButton {
-  margin-top: 150px;
+  margin-top: 220px;
   font-size: 20px;
   border: 2px solid;
   border-image: linear-gradient(45deg, #ff6a00, #ee0979) 1;
@@ -150,7 +158,7 @@
 }
 
 #windButton:active {
-  background: rgba(255, 106, 0, 0.2);
+  background: rgba(255, 89, 0, 0.249);
 }
 
 .gradient-text {
@@ -167,7 +175,7 @@
 /*Image Carousel*/
 .carousel {
   position: absolute;
-  top: -230px;
+  top: -240px;
   left: 50%;
   transform: translateX(-50%);
   width: 500px;
@@ -188,6 +196,108 @@
   height: 120px;
   flex-shrink: 0;
   object-fit: cover;
-  border: 4px solid #fff;          /* white frame */
+  border: 5px solid #fff;          /* white frame */
   border-radius: 12px;
+}
+
+/*bow*/
+/* Ribbon Bow */
+.ribbon-bow {
+  position: absolute;
+  top: -30px;              /* adjusted for bigger size */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;            /* ⬅ bigger */
+  height: 50px;           /* ⬅ bigger */
+  z-index: 5;
+}
+
+.bow-left,
+.bow-right {
+  position: absolute;
+  width: 55px;            /* ⬅ bigger loops */
+  height: 26px;
+  background: linear-gradient(
+    #ff0000, #e5032c
+  );
+  border-radius: 24px 24px 20px 20px;
+  top: 10px;
+}
+
+.bow-left1,
+.bow-right1 {
+  position: absolute;
+  width: 55px;            /* ⬅ bigger loops */
+  height: 26px;
+  background:#ff0000;
+  border-radius: 24px 24px 20px 20px;
+}
+
+.bow-left {
+  left: -9px;
+  transform: rotate(-20deg);
+}
+
+.bow-right {  
+  right: -9px;
+  transform: rotate(20deg);
+}
+
+.bow-left1 {
+  left: -9px;
+  transform: rotate(20deg);
+}
+
+.bow-right1 {  
+  right: -9px;
+  transform: rotate(-20deg);
+}
+
+.bow-knot {
+  position: absolute;
+  width: 22px;            /* ⬅ bigger knot */
+  height: 22px;
+  background: #b71c1c;
+  border-radius: 50%;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
+/* Optional ribbon tails */
+.ribbon-bow::before,
+.ribbon-bow::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 50px;           /* ⬅ longer tails */
+  background: #ff0000;
+  top: 25px;
+}
+
+.ribbon-bow::before {
+  left: 26px;
+  transform: rotate(20deg);
+}
+
+.ribbon-bow::after {
+  right: 26px;
+  transform: rotate(-20deg);
+}
+
+a:has(.inner-image) {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+.status {
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
