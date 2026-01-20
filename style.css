@@ -10,6 +10,12 @@
   touch-action: none;
 }
 
+.carousel,
+.slides,
+.slide {
+  pointer-events: none;
+}
+
 
       body {
         margin: 0;
@@ -76,7 +82,7 @@
     transform: translateX(-50%);
     width: 80px;    /* make it clickable */
     height: 60px;   /* make it clickable */
-    z-index: 4;
+    z-index: 20;
   }
 
   .lever {
@@ -90,6 +96,7 @@
     transform-origin: top center;
     cursor: grab;
     transform: translateX(-50%); /* keep centered */
+    z-index: 21;
   }
   
   .letter-link {
@@ -120,6 +127,7 @@
 
     .inner-image.show {
       opacity: 1;
+      pointer-events: auto;
     }
 
     .inner-image {
@@ -152,6 +160,7 @@
       height: 30px;
       background: #ff0000;
       transform: translateY(-50%);
+      z-index: 2;
     }
 
 #windButton {
