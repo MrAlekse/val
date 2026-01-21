@@ -330,17 +330,25 @@ a:has(.inner-image) {
   text-align: center;
   width: 280px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-  animation: popIn 0.x3s ease;
+  animation: popIn 0.x3 ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .alert-box h2 {
   margin: 0 0 10px;
   font-size: 20px;
+  line-height: 1.25;
 }
 
 .alert-box p {
   font-size: 15px;
   margin-bottom: 20px;
+  margin: 0 0 20px;
+  line-height: 1.4;
 }
 
 .alert-box button {
@@ -367,5 +375,16 @@ a:has(.inner-image) {
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+@media (max-width: 480px) {
+  .alert-box {
+    padding: 26px 22px;
+    width: 90%;
+  }
+
+  .alert-box h2,
+  .alert-box p {
+    text-align: center;
   }
 }
