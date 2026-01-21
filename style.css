@@ -143,6 +143,7 @@
 
 #windButton {
   margin-top: 220px;
+  padding: 10px;
   font-size: 20px;
   border: 2px solid;
   border-image: linear-gradient(45deg, #ff6a00, #ee0979) 1;
@@ -329,7 +330,7 @@ a:has(.inner-image) {
   text-align: center;
   width: 280px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-  animation: popIn 0.3s ease;
+  animation: popIn 0.x3s ease;
 }
 
 .alert-box h2 {

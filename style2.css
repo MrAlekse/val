@@ -1,0 +1,26 @@
+body{
+    background-image: url(images/bgimg.jfif);
+    background-size: cover;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    align-content: center;
+    color: rgb(0, 221, 255);
+    background-repeat: no-repeat;
+}
+.letterpage {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+    top: 50px;
+    margin-left: 30%;
+    position: absolute;
+    background: linear-gradient(#ff6060, #ff0000);
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+    border: #000000;
+    border-width: 10px solid #fff;
+}
