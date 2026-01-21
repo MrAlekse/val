@@ -80,6 +80,7 @@ function end() {
   music.pause();
 }
 
+let alertShown = false;
 function updateImage() {
   const image = document.getElementById('innerImage');
   const imageHeight = image.offsetHeight;
@@ -94,8 +95,14 @@ function updateImage() {
   }
    if (liftProgress >= 0.95) {
     image.style.pointerEvents = "auto";
+     if (!alertShown) {
+      showAlert();
+      alertShown = true;
+    }
   } else {
     image.style.pointerEvents = "none";
+    alertShown = false;
+
   }
 }
 
@@ -180,4 +187,12 @@ function moveCarousel(delta) {
       slides.style.transition = "transform 0.2s ease";
     });
   }
+}
+
+function showAlert() {
+  document.getElementById("customAlert").classList.add("show");
+}
+
+function closeAlert() {
+  document.getElementById("customAlert").classList.remove("show");
 }
