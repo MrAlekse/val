@@ -369,19 +369,3 @@ a:has(.inner-image) {
     opacity: 1;
   }
 }
-.alert-box,
-.alert-box h2,
-.alert-box p {
-  text-align: center;
-}
-
-@media (max-width: 480px) {
-  .alert-box {
-    width: 90%;
-    padding: 22px;
-  }
-
-  .alert-box p {
-    line-height: 1.5;
-  }
-}
