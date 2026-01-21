@@ -340,6 +340,7 @@ a:has(.inner-image) {
   align-items: center;
   justify-content: center;
   text-align: center;
+  transform: translateX(-10px);
 }
 
 .alert-box h2 {
