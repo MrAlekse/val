@@ -12,6 +12,7 @@ body {
   background-image: url(images/texturedbg.jfif);
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: antiquewhite;
 
   overflow-y: auto;         
   overflow-x: hidden;
@@ -30,7 +31,16 @@ body {
   padding: 30px;
   border-radius: 12px;
   text-align: center;
+  font-family: "Brush Script MT", cursive;
   border: white 4px solid;
+}
+h2{
+  color: red;
+}
+p{
+  font-size: 20px;
+  line-height: 1.6;
+
 }
 .heart-frame .strip {
   position: absolute;
@@ -99,4 +109,16 @@ body {
     transform: translateY(-120vh) scale(1.4);
     opacity: 0;
   }
+}
+#tl{
+  transform: rotate(315deg);
+}
+#tr{
+  transform: rotate(45deg);
+}
+#bl{
+  transform: rotate(225deg);
+}
+#br{
+  transform: rotate(135deg);
 }
